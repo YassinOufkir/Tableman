@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>test</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+	<script>
+var myList=[
+ {
+   "Icon": "",
+   "City": "Amsterdam",
+   "Adress": "Van Baerlestraat 42-44",
+   "GF m²": 125,
+   "m² total": 298,
+   "€/year": 84000,
+   "Floors": 2,
+   "Footfall": "4200",
+   "FIELD9": ""
+ },
+ {
+   "Icon": "",
+   "City": "Amsterdam",
+   "Adress": "Van baerlestraat 16",
+   "GF m²": 81,
+   "m² total": 184,
+   "€/year": 115000,
+   "Floors": 3,
+   "Footfall": "4200",
+   "FIELD9": ""
+ },
+ {
+   "Icon": "",
+   "City": "Amsterdam",
+   "Adress": "Utrechtsestraat 32",
+   "GF m²": 125,
+   "m² total": 265,
+   "€/year": 315000,
+   "Floors": 4,
+   "Footfall": "5200",
+   "FIELD9": ""
+ },
+ {
+   "Icon": "",
+   "City": "Amsterdam",
+   "Adress": "Utrechtsestraat 85",
+   "GF m²": 85,
+   "m² total": 562,
+   "€/year": 90000,
+   "Floors": 2,
+   "Footfall": "3200",
+   "FIELD9": ""
+ },
+ {
+   "Icon": "",
+   "City": "Amsterdam",
+   "Adress": "Cornelis Schuytstraat 16",
+   "GF m²": 95,
+   "m² total": 155,
+   "€/year": 200000,
+   "Floors": 2,
+   "Footfall": "3200",
+   "FIELD9": ""
+ },
+ {
+   "Icon": "",
+   "City": "Amsterdam",
+   "Adress": "Cornelis Schuytstraat 21",
+   "GF m²": 78,
+   "m² total": 132,
+   "€/year": 115000,
+   "Floors": 2,
+   "Footfall": "-",
+   "FIELD9": ""
+ },
+ {
+   "Icon": "",
+   "City": "Amsterdam",
+   "Adress": "Cornelis Schuytstraat 30",
+   "GF m²": 95,
+   "m² total": 155,
+   "€/year": 122074,
+   "Floors": 2,
+   "Footfall": "300",
+   "FIELD9": ""
+ },
+ {
+   "Icon": "",
+   "City": "Amsterdam",
+   "Adress": "Cornelis Schuytstraat 90",
+   "GF m²": 78,
+   "m² total": 132,
+   "€/year": 115000,
+   "Floors": 2,
+   "Footfall": "300",
+   "FIELD9": ""
+ },
+ {
+   "Icon": "",
+   "City": "Amsterdam",
+   "Adress": "Cornelis Schuytstraat 90",
+   "GF m²": 78,
+   "m² total": 132,
+   "€/year": 115000,
+   "Floors": 2,
+   "Footfall": "300",
+   "FIELD9": ""
+ }
+];
+
+// Builds the HTML Table out of myList json data from Ivy restful service.
+ function buildHtmlTable() {
+     var columns = addAllColumnHeaders(myList);
+ 
+     for (var i = 0 ; i < myList.length ; i++) {
+         var row$ = $('<tr/>');
+         for (var colIndex = 0 ; colIndex < columns.length ; colIndex++) {
+             var cellValue = myList[i][columns[colIndex]];
+ 
+             if (cellValue == null) { cellValue = ""; }
+ 
+             row$.append($('<td/>').html(cellValue));
+         }
+         $("#excelDataTable").append(row$);
+     }
+ }
+ 
+ // Adds a header row to the table and returns the set of columns.
+ // Need to do union of keys from all records as some records may not contain
+ // all records
+ function addAllColumnHeaders(myList)
+ {
+     var columnSet = [];
+     var headerTr$ = $('<tr/>');
+ 
+     for (var i = 0 ; i < myList.length ; i++) {
+         var rowHash = myList[i];
+         for (var key in rowHash) {
+             if ($.inArray(key, columnSet) == -1){
+                 columnSet.push(key);
+                 headerTr$.append($('<th/>').html(key));
+             }
+         }
+     }
+     $("#excelDataTable").append(headerTr$);
+ 
+     return columnSet;
+ }
+</script>
+<style type="text/css">
+	table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}
+</style>
+</head>
+<body onLoad="buildHtmlTable();">
+	<table class="sortable table-striped" id="excelDataTable">
+		
+	</table>
+</body>
+</html>
