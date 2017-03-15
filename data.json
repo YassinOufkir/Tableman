@@ -1,0 +1,109 @@
+var rotterdam=[   
+ {
+   "Icon": "",
+   "City": "Rotterdam",
+   "Adress": "Van Baerlestraat 42-44",
+   "GF m²": 125,
+   "m² total": 298,
+   "€/year": 84000,
+   "Floors": 2,
+   "Footfall": 4200,
+   "Like": ""
+ },
+ {
+   "Icon": "",
+   "City": "Rotterdam",
+   "Adress": "Van baerlestraat 16",
+   "GF m²": 81,
+   "m² total": 184,
+   "€/year": 115000,
+   "Floors": 3,
+   "Footfall": 4200,
+   "Like": ""
+ },
+ {
+   "Icon": "",
+   "City": "Rotterdam",
+   "Adress": "Utrechtsestraat 32",
+   "GF m²": 125,
+   "m² total": 265,
+   "€/year": 315000,
+   "Floors": 4,
+   "Footfall": 5200,
+   "Like": ""
+ },
+ ,
+ 
+];
+
+var leiden=[
+{
+   "Icon": "",
+   "City": "leiden",
+   "Adress": "Cornelis Schuytstraat 30",
+   "GF m²": 95,
+   "m² total": 155,
+   "€/year": 122074,
+   "Floors": 2,
+   "Footfall": 300,
+   "Like": ""
+ },
+ {
+   "Icon": "",
+   "City": "leiden",
+   "Adress": "Cornelis Schuytstraat 90",
+   "GF m²": 78,
+   "m² total": 132,
+   "€/year": 115000,
+   "Floors": 2,
+   "Footfall": 300,
+   "Like": ""
+ },
+ {
+   "Icon": "",
+   "City": "leiden",
+   "Adress": "Cornelis Schuytstraat 90",
+   "GF m²": 78,
+   "m² total": 132,
+   "€/year": 115000,
+   "Floors": 2,
+   "Footfall": 300,
+   "Like": ""
+ }
+];
+
+var amsterdam=[
+{
+   "Icon": "",
+   "City": "Amsterdam",
+   "Adress": "Utrechtsestraat 85",
+   "GF m²": 85,
+   "m² total": 562,
+   "€/year": 90000,
+   "Floors": 2,
+   "Footfall": 3200,
+   "Like": ""
+ },
+ {
+   "Icon": "",
+   "City": "Amsterdam",
+   "Adress": "Cornelis Schuytstraat 16",
+   "GF m²": 95,
+   "m² total": 155,
+   "€/year": 200000,
+   "Floors": 2,
+   "Footfall": 3200,
+   "Like": ""
+ },
+ {
+   "Icon": "",
+   "City": "Amsterdam",
+   "Adress": "Cornelis Schuytstraat 21",
+   "GF m²": 78,
+   "m² total": 132,
+   "€/year": 115000,
+   "Floors": 2,
+   "Footfall": "-",
+   "Like": ""
+ }
+];
